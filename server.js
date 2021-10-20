@@ -5,7 +5,7 @@ import Express from 'express';
 import { MongoClient, ObjectId } from 'mongodb';
 import Cors from 'cors'; 
 
-const stringConection = 'mongodb+srv://GitJN-1:mongo123db@proyecto-misiontic.vuojm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const stringConection = ''
 
 const cliente = new MongoClient(stringConection,{
     useNewUrlParser:true,
