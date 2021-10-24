@@ -9,13 +9,7 @@ const getAProductos = async (callback) => {
 
 const postAProductos = async (datosProducto, callback) => {
     const baseDeDatos = getBD();
-    try {     
-        await baseDeDatos.collection('productos').insertOne(datosProducto, callback)
-        res.sendStatus(200)
-    } catch (error) {
-        res.sendStatus(500)
-    }
-    console.log("Producto a crear: ", req.body);
+    await baseDeDatos.collection('productos').insertOne(datosProducto, callback)
 }
 
 const patchAProductos = async (id, edicion, callback) => {
