@@ -9,13 +9,7 @@ const getAUsuarios = async (callback) => {
 
 const postAUsuarios = async (datosUsuario, callback) => {
     const baseDeDatos = getBD();
-    try {     
-        await baseDeDatos.collection('usuarios').insertOne(datosUsuario, callback)
-        res.sendStatus(200)
-    } catch (error) {
-        res.sendStatus(500)
-    }
-    console.log("Usuario a crear: ", req.body);
+    await baseDeDatos.collection('usuarios').insertOne(datosUsuario, callback)
 }
 
 const patchAUsuarios = async (id, edicion, callback) => {
