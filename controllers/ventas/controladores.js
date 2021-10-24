@@ -9,13 +9,7 @@ const getAVentas = async (callback) => {
 
 const postAVentas = async (datosVenta, callback) => {
     const baseDeDatos = getBD();
-    try {     
-        await baseDeDatos.collection('ventas').insertOne(datosVenta, callback)
-        res.sendStatus(200)
-    } catch (error) {
-        res.sendStatus(500)
-    }
-    console.log("Venta a crear: ", req.body);
+    await baseDeDatos.collection('ventas').insertOne(datosVenta, callback)
 }
 
 const patchAVentas = async (id, edicion, callback) => {
